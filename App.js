@@ -9,6 +9,8 @@ import FirstClass from './src/components/FirstClass';
 import SecondClass from './src/components/SecondClass';
 import ThirdClass from './src/components/ThirdClass';
 
+import Grocery from './src/components/Grocery';
+
 // Sample heading
 // const heading = React.createElement("h1", {id : "heading"}, "Hello world from React!")
 
@@ -117,6 +119,15 @@ const Navbar = () => {
             <div>
                 <Link to='/classcom'>Class Component</Link>
             </div>
+            <div>
+                <Link to="/grocery">Grocery</Link>
+            </div>
+            <div>
+                <Link to="/users">Users</Link>
+            </div>
+            <div>
+                <Link to='/counter'>Counter</Link>
+            </div>
         </nav>
     )
 }
@@ -143,15 +154,6 @@ const AppBody = () => {
     return (
         <section className="AppBody">
             <Navbar/>
-            <div className="detailBox-container">
-                <h3>User details</h3>
-                {
-                users.map((user) =>(
-                    <DetailBox key={user.id} userData = {user}/>
-                ))
-                }
-            </div>
-            <Counter />
             <Outlet />
         </section>
     )
@@ -169,6 +171,20 @@ const appRouter = createBrowserRouter([
             {
                 path : '/classcom',
                 element : <FirstClass name={"First"}/>
+            },
+            {
+                path : '/grocery',
+                element : <Grocery/>
+            },
+            {
+                path : '/counter',
+                element : <Counter />
+            },
+            {
+                path : '/users',
+                element :  users.map((user) =>(
+                    <DetailBox key={user.id} userData = {user}/>
+                ))
             }
         ]
     }
