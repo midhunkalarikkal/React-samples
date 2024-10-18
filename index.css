@@ -1,0 +1,109 @@
+#heading{
+    color : red;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    display: flex;
+    flex: row;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    padding: 10px;
+}
+
+.logo img {
+    height: 50px; 
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2980b9;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #3498db;
+}
+
+.userIcon img {
+    height: 40px; 
+    border-radius: 50%;
+}
+
+.detailBox-container{
+    padding: 30px;
+    width: 30%;
+}
+
+.detailBox-container > h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.profile_card{
+    margin: 10px;
+    padding: 2px;
+    background-color: steelblue;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.profile_card > h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+}
+.profile_card > p {
+    color: #113045;
+    font-size: 1.5rem;
+}
+
+.counter-container{
+    width: 30%;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.counter{
+    font-size: 3rem;
+}
+
+.counter-buttons{
+    padding: 10px;
+}
+
+.counter-buttons > button {
+    font-size: 1.5rem;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    background: rgb(244, 244, 111);
+    cursor: pointer;
+}
+
+.counter-buttons > button:hover{
+    background-color: rgb(237, 237, 58);
+}
