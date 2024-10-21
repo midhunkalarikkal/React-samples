@@ -21,6 +21,7 @@ import Input from "./src/components/Input";
 
 import UseMemoCounter from "./src/components/useMemoCounter";
 import Parent from "./src/components/Parent";
+import UseReducer from './src/components/useReducer'
 
 const Grocery = lazy(() => import("./src/components/Grocery"));
 
@@ -160,6 +161,9 @@ const Navbar = () => {
         <Link to="/reactMemo">React.memo</Link>
       </div>
       <div>
+        <Link to="/useReducer">useReducer</Link>
+      </div>
+      <div>
         <Link>{userName}</Link>
       </div>
     </nav>
@@ -240,6 +244,10 @@ const appRouter = createBrowserRouter([
       {
         path : '/reactMemo',
         element: <Parent />
+      },
+      {
+        path : '/useReducer',
+        element: <UseReducer />
       },
       {
         path: "/users",
