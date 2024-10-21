@@ -19,6 +19,8 @@ import UserContext from "./src/utils/UserContext";
 
 import Input from "./src/components/Input";
 
+import UseMemoCounter from "./src/components/useMemoCounter";
+
 const Grocery = lazy(() => import("./src/components/Grocery"));
 
 // Sample heading
@@ -151,6 +153,9 @@ const Navbar = () => {
         <Link to="/input">Input</Link>
       </div>
       <div>
+        <Link to="/useMemo">useMemo</Link>
+      </div>
+      <div>
         <Link>{userName}</Link>
       </div>
     </nav>
@@ -223,6 +228,10 @@ const appRouter = createBrowserRouter([
       {
         path : '/input',
         element: <Input />
+      },
+      {
+        path : '/useMemo',
+        element: <UseMemoCounter />
       },
       {
         path: "/users",
