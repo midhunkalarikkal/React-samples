@@ -1,6 +1,6 @@
 import React from "react"
 
-const Child = () => {
+const Child = ({handleClick}) => {
     console.log("child rendered")
     return(
         <div>
