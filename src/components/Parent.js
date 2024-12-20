@@ -1,19 +1,20 @@
-import { useCallback, useState } from "react";
-import ChildMemo from "./Child";
-const Parent = () => {
-    const [ count , setCount ] = useState(0)
-    console.log("parent rendered")
+import React, { useState } from "react";
+import Child from "./Child";
 
-    const memoizedCall = useCallback(() => {
-        
-    },[])
-    
-    return(
-        <div>
-            <button onClick={()=> setCount( count + 1)}>Increment {count}</button>
-            <ChildMemo handleClick={memoizedCall}/>
-        </div>
-    )
-}
+const Parent = () => {
+  const [childData, setChildData] = useState("");  
+
+  const handleChildData = (data) => {
+    setChildData(data);  
+  };
+
+  return (
+    <div className="w-6/12 p-2 bg-orange-100">
+      <h1>Data from Child component</h1>
+      <h1>{childData}</h1>  
+      <Child onSendData={handleChildData} />
+    </div>
+  );
+};
 
 export default Parent;
