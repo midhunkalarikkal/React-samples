@@ -105,11 +105,13 @@ import Lazy from "./src/components/Lazy";
 import UserContext from "./src/utils/UserContext";
 import UseMemo from "./src/components/UseMemo";
 import UseReducer from "./src/components/UseReducer";
-import Parent from "./src/components/Parent";
-import Child from "./src/components/Child";
+import UseCallback from "./src/components/UseCallback";
+import StateLifting from "./src/components/StateLifting";
+import PropsLifting from "./src/components/PropsLifting";
+import Test from "./src/components/Test";
+import ForwardRef from "./src/components/ForwardRef";
 
-const Lazy = lazy(() => import("./src/components/Lazy"));
-
+const Sample = lazy(() => import("./src/components/Sample"))
 const AppBody = () => {
   const [userName, setUserName] = useState();
 
@@ -152,7 +154,8 @@ const appRouter = createBrowserRouter([
         element: <UseMemo />,
       },
       {
-        path: "/reactMemo",
+        path: "/useCallback",
+        element: <UseCallback />
         
       },
       {
@@ -160,13 +163,26 @@ const appRouter = createBrowserRouter([
         element: <UseReducer />,
       },
       {
-        path: "/parent",
-        element: <Parent />,
+        path: "/stateLifting",
+        element: <StateLifting />,
       },
       {
-        path: "/child",
-        element: <Child />,
+        path: "/propsLifting",
+        element: <PropsLifting />,
       },
+      {
+        path: "/test",
+        element: <Test />,
+      },
+      {
+        path: "/forwardRef",
+        element: <ForwardRef />
+      },{
+        path : "/sample/:id",
+        element : <Suspense fallback={<h1>Loading</h1>}>
+          <Sample />
+        </Suspense>
+      }
     ],
   },
 ]);
