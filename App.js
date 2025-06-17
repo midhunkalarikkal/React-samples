@@ -113,17 +113,14 @@ import ForwardRef from "./src/components/ForwardRef";
 
 const Sample = lazy(() => import("./src/components/Sample"))
 const AppBody = () => {
-  const [userName, setUserName] = useState();
+  const [userName, setUserName] = useState("Midhun K Paniker");
 
   useEffect(() => {
 
   }, []);
 
   return (
-    <UserContext.Provider value={{
-      userName,
-      setUserName
-    }}>
+    <UserContext.Provider value={{ userName, setUserName }}>
       <section className="AppBody">
         <Navbar />
         <Body />
